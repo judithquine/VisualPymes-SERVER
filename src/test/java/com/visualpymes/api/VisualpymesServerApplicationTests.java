@@ -23,6 +23,9 @@ class VisualpymesServerApplicationTests {
     @Autowired
     MockMvc mockMvc;
 
+    @Autowired
+    ClientRepository clientRepository;
+
     @Test
     void returnsTheExistingClients() throws Exception {
 
@@ -47,6 +50,8 @@ class VisualpymesServerApplicationTests {
                 new Client("Cliente 1: Tu estilo", "../img/peinado.png", "Paquete completo lavado, secado, peinado", 50.0),
                 new Client("Cliente 2: Tu pasteleria", "../img/torta.png", "Torta chocolate dos pisos", 20.0)
         );
+
+        clientRepository.saveAll(clients);
 
 
     }
